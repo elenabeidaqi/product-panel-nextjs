@@ -1,8 +1,9 @@
+import { IProducts } from "../products/Iproducts";
 
 export interface ICounterState {
   count: () => number;
   removeAllCart: () => void;
-  cart : any[];
-  add: (product: any) => void
-  remove: (productId: number) => void,
+  cart : IProducts[];
+  add: (product: IProducts) => void;
+  remove: (productId: number) => void;
 }

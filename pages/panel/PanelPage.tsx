@@ -27,7 +27,7 @@ const PanelPage = () => {
     console.log("error" , error)
   }
   return (
-    <div className="flex justify-center flex-wrap gap-16 p-5">
+    <div className="flex justify-center flex-wrap gap-16 p-5 mt-20">
       {products?.map((product: any) => (
         <ProductCard data={product} key={product.id} />
       ))}
