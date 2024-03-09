@@ -7,7 +7,7 @@ const LoginCard = () => {
   const router = useRouter();
   const onFinish = (values: any) => {
     console.log("Success:", values);
-    if (values.password === "111213" && values.email === "admin@gmail.com") {
+    if (values.password === "111213" && values.email === "user@gmail.com") {
       Cookies.set(
         "token",
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6ImFkbWluIiwiaWF0IjoxNTE2MjM5MDIyfQ.T26Dm4buOBRdxNs58srk1l_N5y1Dxii9y-YMj-9J7mM"

@@ -16,6 +16,7 @@ const ProductCard = ({ data }: IProductCardProps) => {
   const showCount = cart.find(product => product.id === data.id)
   return (
     <div>
+   
       <Card
         style={{ width: 250 }}
         cover={<img className="h-48 p-5" alt="products" src={data.image} />}

@@ -1,7 +1,9 @@
+
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import "./globals.css";
 import type { Metadata } from "next";
 import QueryClientProvider from "./QueryClientProvider";
+
 
 export const metadata: Metadata = {
   title: "Products Panel",
@@ -13,6 +15,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+ 
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body>
