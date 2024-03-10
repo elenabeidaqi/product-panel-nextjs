@@ -4,11 +4,13 @@ import React from "react";
 
 const CartDetail = () => {
   const { cart, count, removeAllCart } = useCart();
-  let priceList = cart.map((product) => product.price);
+  let priceList = cart.map((product) => product.price*product.count);
   let totalPrice = 0
   if (priceList.length > 0) {
    totalPrice = +priceList.reduce((prev, curr) => prev + curr).toFixed(1);
   }
+
+  
   return (
     <div className="p-5 mt-20 bg-gray-100 border border-gray-400 rounded-md">
       <div className="bg-white p-5 rounded-lg space-y-5">

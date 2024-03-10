@@ -2,10 +2,12 @@ import React from "react";
 import { Button, Form, Input } from "antd";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
+import { IAuthValues } from "@/types/auth/IAuthValues";
+
 
 const LoginCard = () => {
   const router = useRouter();
-  const onFinish = (values: any) => {
+  const onFinish = (values: IAuthValues) => {
     console.log("Success:", values);
     if (values.password === "111213" && values.email === "user@gmail.com") {
       Cookies.set(
@@ -15,9 +17,11 @@ const LoginCard = () => {
       router.push("/panel");
     }
   };
-
-  const onFinishFailed = (errorInfo: any) => {
-    console.log("Failed:", errorInfo);
+  const validateMessages = {
+    // required: '${label} is required!',
+    types: {
+      email: '${label} is not a valid email!',
+    },
   };
 
   return (
@@ -29,14 +33,14 @@ const LoginCard = () => {
         <Form
           name="basic"
           onFinish={onFinish}
-          onFinishFailed={onFinishFailed}
+          validateMessages={validateMessages}
           initialValues={{ email: "", password: "" }}
           autoComplete="off"
           className="xl:w-2/4 lg:w-2/4 md:w-2/4 sm:w-full"
         >
           <Form.Item
             name="email"
-            rules={[{ required: true, message: "Please input your username!" }]}
+            rules={[{ required: true, message: "Please input your email!" , type:"email" }]}
           >
             <>
               <Input placeholder="Email Address" />
